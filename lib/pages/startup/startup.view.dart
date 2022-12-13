@@ -1,7 +1,3 @@
-import 'dart:convert';
-
-import 'package:flutter_svg/flutter_svg.dart';
-import 'package:flutter_svg/parser.dart';
 import 'package:go_green_app/app_libs.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';

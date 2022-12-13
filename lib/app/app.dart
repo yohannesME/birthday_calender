@@ -1,3 +1,4 @@
+import 'package:go_green_app/pages/addBirthday/addBirthday.view.dart';
 import 'package:go_green_app/pages/home/home.view.dart';
 import 'package:go_green_app/pages/login/login.view.dart';
 import 'package:stacked/stacked_annotations.dart';

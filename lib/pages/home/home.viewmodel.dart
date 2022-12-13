@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:go_green_app/pages/addBirthday/addBirthday.view.dart';
 import 'package:stacked/stacked.dart';
 import 'package:stacked_services/stacked_services.dart';
 
@@ -18,8 +19,9 @@ class HomeViewModel extends BaseViewModel {
     return null;
   }
 
-  void addBirthday() {
-    print('hello');
+  void addNewBirthday() {
+    print('yhis runs');
+    _navService.navigateWithTransition(AddBirthday());
   }
 
   StartupViewModel(BuildContext context) {

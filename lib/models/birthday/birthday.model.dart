@@ -1,3 +1,4 @@
+import 'package:bahere_hasab/bahere_hasab.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 import 'package:flutter/foundation.dart';
 
@@ -11,10 +12,8 @@ class Birthday with _$Birthday {
   factory Birthday(
       {required String id,
       required String name,
-      required String category,
+      required String date,
       String? image,
       String? note,
       @Default([]) List<String> tags}) = _Birthday;
-  factory Birthday.fromJson(Map<String, dynamic> json) =>
-      _$BirthdayFromJson(json);
 }

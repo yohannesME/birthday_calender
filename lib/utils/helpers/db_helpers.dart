@@ -9,7 +9,7 @@ class DBHelper {
       path.join(dbPath, 'birthdays.db'),
       onCreate: (db, version) {
         return db.execute(
-            'CREATE TABLE birthday (id TEXT PRIMARY KEY, name TEXT, image TEXT, date TEXT)');
+            'CREATE TABLE birthday (id TEXT PRIMARY KEY, name TEXT, image TEXT, date TEXT, note TEXT)');
       },
       version: 1,
     );

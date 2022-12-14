@@ -10,9 +10,10 @@ import '../services/_services.dart';
 @StackedApp(
   routes: [
     // Views
-    CupertinoRoute(page: StartupView),
+    CupertinoRoute(page: StartupView, initial: true),
     CupertinoRoute(page: HomeView),
     CupertinoRoute(page: LoginView),
+    CupertinoRoute(page: AddBirthday),
   ],
   dependencies: [
     //core services
@@ -25,6 +26,7 @@ import '../services/_services.dart';
 
     // Domain Services
     LazySingleton(classType: UserService),
+    // LazySingleton(classType: BirthdayService),
 
     // Stacked Services
     LazySingleton(classType: NavigationService),

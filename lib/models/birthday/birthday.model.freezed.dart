@@ -14,20 +14,15 @@ T _$identity<T>(T value) => value;
 final _privateConstructorUsedError = UnsupportedError(
     'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
 
-Birthday _$BirthdayFromJson(Map<String, dynamic> json) {
-  return _Birthday.fromJson(json);
-}
-
 /// @nodoc
 mixin _$Birthday {
   String get id => throw _privateConstructorUsedError;
   String get name => throw _privateConstructorUsedError;
-  String get category => throw _privateConstructorUsedError;
+  String get date => throw _privateConstructorUsedError;
   String? get image => throw _privateConstructorUsedError;
   String? get note => throw _privateConstructorUsedError;
   List<String> get tags => throw _privateConstructorUsedError;
 
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
   @JsonKey(ignore: true)
   $BirthdayCopyWith<Birthday> get copyWith =>
       throw _privateConstructorUsedError;
@@ -41,7 +36,7 @@ abstract class $BirthdayCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
-      String category,
+      String date,
       String? image,
       String? note,
       List<String> tags});
@@ -62,7 +57,7 @@ class _$BirthdayCopyWithImpl<$Res, $Val extends Birthday>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? category = null,
+    Object? date = null,
     Object? image = freezed,
     Object? note = freezed,
     Object? tags = null,
@@ -76,9 +71,9 @@ class _$BirthdayCopyWithImpl<$Res, $Val extends Birthday>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      category: null == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
+      date: null == date
+          ? _value.date
+          : date // ignore: cast_nullable_to_non_nullable
               as String,
       image: freezed == image
           ? _value.image
@@ -106,7 +101,7 @@ abstract class _$$_BirthdayCopyWith<$Res> implements $BirthdayCopyWith<$Res> {
   $Res call(
       {String id,
       String name,
-      String category,
+      String date,
       String? image,
       String? note,
       List<String> tags});
@@ -125,7 +120,7 @@ class __$$_BirthdayCopyWithImpl<$Res>
   $Res call({
     Object? id = null,
     Object? name = null,
-    Object? category = null,
+    Object? date = null,
     Object? image = freezed,
     Object? note = freezed,
     Object? tags = null,
@@ -139,9 +134,9 @@ class __$$_BirthdayCopyWithImpl<$Res>
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
               as String,
-      category: null == category
-          ? _value.category
-          : category // ignore: cast_nullable_to_non_nullable
+      date: null == date
+          ? _value.date
+          : date // ignore: cast_nullable_to_non_nullable
               as String,
       image: freezed == image
           ? _value.image
@@ -166,22 +161,19 @@ class _$_Birthday extends _Birthday with DiagnosticableTreeMixin {
   _$_Birthday(
       {required this.id,
       required this.name,
-      required this.category,
+      required this.date,
       this.image,
       this.note,
       final List<String> tags = const []})
       : _tags = tags,
         super._();
 
-  factory _$_Birthday.fromJson(Map<String, dynamic> json) =>
-      _$$_BirthdayFromJson(json);
-
   @override
   final String id;
   @override
   final String name;
   @override
-  final String category;
+  final String date;
   @override
   final String? image;
   @override
@@ -197,7 +189,7 @@ class _$_Birthday extends _Birthday with DiagnosticableTreeMixin {
 
   @override
   String toString({DiagnosticLevel minLevel = DiagnosticLevel.info}) {
-    return 'Birthday(id: $id, name: $name, category: $category, image: $image, note: $note, tags: $tags)';
+    return 'Birthday(id: $id, name: $name, date: $date, image: $image, note: $note, tags: $tags)';
   }
 
   @override
@@ -207,7 +199,7 @@ class _$_Birthday extends _Birthday with DiagnosticableTreeMixin {
       ..add(DiagnosticsProperty('type', 'Birthday'))
       ..add(DiagnosticsProperty('id', id))
       ..add(DiagnosticsProperty('name', name))
-      ..add(DiagnosticsProperty('category', category))
+      ..add(DiagnosticsProperty('date', date))
       ..add(DiagnosticsProperty('image', image))
       ..add(DiagnosticsProperty('note', note))
       ..add(DiagnosticsProperty('tags', tags));
@@ -220,16 +212,14 @@ class _$_Birthday extends _Birthday with DiagnosticableTreeMixin {
             other is _$_Birthday &&
             (identical(other.id, id) || other.id == id) &&
             (identical(other.name, name) || other.name == name) &&
-            (identical(other.category, category) ||
-                other.category == category) &&
+            (identical(other.date, date) || other.date == date) &&
             (identical(other.image, image) || other.image == image) &&
             (identical(other.note, note) || other.note == note) &&
             const DeepCollectionEquality().equals(other._tags, _tags));
   }
 
-  @JsonKey(ignore: true)
   @override
-  int get hashCode => Object.hash(runtimeType, id, name, category, image, note,
+  int get hashCode => Object.hash(runtimeType, id, name, date, image, note,
       const DeepCollectionEquality().hash(_tags));
 
   @JsonKey(ignore: true)
@@ -237,33 +227,24 @@ class _$_Birthday extends _Birthday with DiagnosticableTreeMixin {
   @pragma('vm:prefer-inline')
   _$$_BirthdayCopyWith<_$_Birthday> get copyWith =>
       __$$_BirthdayCopyWithImpl<_$_Birthday>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$_BirthdayToJson(
-      this,
-    );
-  }
 }
 
 abstract class _Birthday extends Birthday {
   factory _Birthday(
       {required final String id,
       required final String name,
-      required final String category,
+      required final String date,
       final String? image,
       final String? note,
       final List<String> tags}) = _$_Birthday;
   _Birthday._() : super._();
-
-  factory _Birthday.fromJson(Map<String, dynamic> json) = _$_Birthday.fromJson;
 
   @override
   String get id;
   @override
   String get name;
   @override
-  String get category;
+  String get date;
   @override
   String? get image;
   @override

@@ -1,5 +1,6 @@
 import 'dart:io';
 
+import 'package:bahere_hasab/bahere_hasab.dart';
 import 'package:flutter/material.dart';
 import 'package:go_green_app/pages/home/home.view.dart';
 import 'package:image_picker/image_picker.dart';
@@ -15,6 +16,7 @@ class AddBirthdayModel extends BaseViewModel {
 
   final _userService = locator<UserService>();
   final _navService = locator<NavigationService>();
+  // final _bdService = locator<BirthdayService>();
 
   File? storedImage = null;
 
@@ -29,19 +31,31 @@ class AddBirthdayModel extends BaseViewModel {
   }
 
   void takePicture() async {
-    print('this ruuuuuuuuns');
-
     final imageFile = await ImagePicker().pickImage(
       source: ImageSource.gallery,
       maxHeight: 600,
     );
     if (imageFile == null) return;
-    // setState(() {
     storedImage = File(imageFile.path);
-    // });
 
-    final appDir = await syspaths.getApplicationDocumentsDirectory();
-    final fileName = path.basename(imageFile.path);
-    final savedImage = await storedImage!.copy('${appDir.path}/${fileName}');
+    print('stored image' + storedImage.toString());
+    notifyListeners();
+
+    // final appDir = await syspaths.getApplicationDocumentsDirectory();
+    // final fileName = path.basename(imageFile.path);
+    // final savedImage = await storedImage!.copy('${appDir.path}/${fileName}');
+  }
+
+  void addBirthday(String name, String birthdate, String note, String id) {
+    print(id + birthdate + name + note);
+    final newBd = Birthday(
+      id: id,
+      name: name,
+      image: storedImage!.path,
+      note: note,
+      date: birthdate,
+    );
+    print(newBd.toString() + 'before');
+    // _bdService.addBirthdate(newBd);
   }
 }

@@ -12,9 +12,6 @@ class BirthdayService extends BaseService {
   }
 
   void addBirthdate(Birthday newBd) {
-    print(_bd);
-    print(newBd.toString() + ' hello man');
-    return;
     _bd.add(newBd);
     DBHelper.insert(table, {
       'id': newBd.id,

@@ -16,7 +16,7 @@ class AddBirthdayModel extends BaseViewModel {
 
   final _userService = locator<UserService>();
   final _navService = locator<NavigationService>();
-  // final _bdService = locator<BirthdayService>();
+  final _bdService = locator<BirthdayService>();
 
   File? storedImage = null;
 
@@ -41,9 +41,9 @@ class AddBirthdayModel extends BaseViewModel {
     print('stored image' + storedImage.toString());
     notifyListeners();
 
-    // final appDir = await syspaths.getApplicationDocumentsDirectory();
-    // final fileName = path.basename(imageFile.path);
-    // final savedImage = await storedImage!.copy('${appDir.path}/${fileName}');
+    final appDir = await syspaths.getApplicationDocumentsDirectory();
+    final fileName = path.basename(imageFile.path);
+    final savedImage = await storedImage!.copy('${appDir.path}/${fileName}');
   }
 
   void addBirthday(String name, String birthdate, String note, String id) {
@@ -55,7 +55,6 @@ class AddBirthdayModel extends BaseViewModel {
       note: note,
       date: birthdate,
     );
-    print(newBd.toString() + 'before');
-    // _bdService.addBirthdate(newBd);
+    _bdService.addBirthdate(newBd);
   }
 }

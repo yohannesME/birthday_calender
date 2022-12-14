@@ -26,7 +26,7 @@ import '../services/_services.dart';
 
     // Domain Services
     LazySingleton(classType: UserService),
-    // LazySingleton(classType: BirthdayService),
+    LazySingleton(classType: BirthdayService),
 
     // Stacked Services
     LazySingleton(classType: NavigationService),
